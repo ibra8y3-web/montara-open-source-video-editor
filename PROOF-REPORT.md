@@ -13,6 +13,7 @@
 | استيراد الفيديو | `onImport` | يعتمد على File input وURL.createObjectURL | REAL | medium |
 | المعاينة والتحكم | `video` + `timeupdate` | وقت الفيديو الحقيقي وتغيير currentTime | REAL | medium |
 | التصدير | `exportVideo` | MediaRecorder وBlob WebM | REAL | medium |
+| تصدير MP4 | `src/engine/ffmpeg.ts:exportMp4` | FFmpeg WASM محلي يقرأ الملف ويكتب MP4 مع trim/mute | REAL | medium |
 | الحفظ المحلي | `saveProject` | IndexedDB object store `projects` | REAL | medium |
 | تطبيق متعدد المنصات أصلي | غير منفذ | لا يوجد runtime أصلي بعد | BLOCKED | high |
 
@@ -29,9 +30,10 @@
 - [x] الحفظ يصل إلى IndexedDB فعلي.
 - [x] الأدوات غير المكتملة ليست ممثلة كأكثر من 100 أداة.
 - [ ] لم يُختبر التصدير في متصفح فعلي بعد.
+- [ ] لم يُختبر MP4 في متصفح فعلي بعد؛ فحص البناء فقط لا يثبت تشغيل WASM.
 
 ## Known gaps and blockers
-- تصدير WebM وليس MP4 — `PARTIAL` — إضافة FFmpeg/WASM أو native.
+- إدراج النص داخل MP4 — `PARTIAL` — إضافة filter graph وfont محلي.
 - حفظ metadata فقط وليس Blob — `PARTIAL` — استخدام OPFS/File System Access.
 - لا يوجد حساب GitHub أو remote مصرح به — `BLOCKED` — يحتاج رابط المستودع أو اعتماد GitHub.
 

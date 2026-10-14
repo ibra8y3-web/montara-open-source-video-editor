@@ -2,7 +2,7 @@
 
 ## Current runtime
 
-The current code is a local-first React/Vite editor core. It runs in a modern browser and can be installed as a PWA after adding a service worker and manifest.
+The current code is a local-first React/Vite editor core. It runs in a modern browser and includes local FFmpeg WASM trim/mute to MP4. It can be installed as a PWA after adding a service worker and manifest.
 
 ## Native packaging decision
 

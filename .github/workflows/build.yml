@@ -26,6 +26,8 @@ jobs:
         run: npm run check
       - name: Production build
         run: npm run build
+      - name: Verify FFmpeg runtime assets
+        run: test -s public/ffmpeg/ffmpeg-core.js && test -s public/ffmpeg/ffmpeg-core.wasm
       - name: Upload web artifact
         uses: actions/upload-artifact@v4
         with:
